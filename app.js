@@ -1,9 +1,7 @@
 const express = require('express')
 const app = express()
-// const port = 3000
+PORT = process.env.PORT || 3000
 const routes = require('./routes/index')
-
-require('dotenv').config();
 
 app.use(require("cors")());
 
@@ -14,8 +12,6 @@ app.use(express.urlencoded({extended:false}))
 app.use(routes)
 
 
-const PORT = process.env.PORT || 3000;
-
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+  console.log(`Example app listening at ${PORT}`)
+})
